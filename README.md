@@ -1,4 +1,4 @@
-# FreshRSS - YouTube video extension
+# FreshRSS - Invidious videos extension
 
 This FreshRSS extension allows you to directly watch YouTube videos displayed by [your favorite Invidious instance](https://github.com/omarroth/invidious) from within subscribed channel feeds.
 
