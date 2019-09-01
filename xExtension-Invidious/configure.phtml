@@ -1,0 +1,38 @@
+
+<form action="<?php echo _url('extension', 'configure', 'e', urlencode($this->getName())); ?>" method="post">
+	<input type="hidden" name="_csrf" value="<?php echo FreshRSS_Auth::csrfToken(); ?>" />
+	<div class="form-group">
+
+		<label class="group-name" for="in_height"><?php echo _t('ext.in_videos.height'); ?></label>
+		<div class="group-controls">
+			<input type="number" id="in_height" name="in_height" value="<?php echo FreshRSS_Context::$user_conf->in_player_height; ?>" min="50" data-leave-validation="1">
+		</div>
+
+		<label class="group-name" for="in_width"><?php echo _t('ext.in_videos.width'); ?></label>
+		<div class="group-controls">
+			<input type="number" id="in_width" name="in_width" value="<?php echo FreshRSS_Context::$user_conf->in_player_width; ?>" min="100" data-leave-validation="1">
+		</div>
+
+		<label class="group-name" for="in_show_content"><?php echo _t('ext.in_videos.show_content'); ?></label>
+		<div class="group-controls">
+			<input type="checkbox" id="in_show_content" name="in_show_content" value="1" <?php if (FreshRSS_Context::$user_conf->in_show_content != '') { echo 'checked'; }; ?>>
+        </div>
+
+        <label class="group-name" for="in_instance"><?php echo _t('ext.in_videos.instance'); ?></label>
+        <div class="group-controls">
+            <input type="text" id="in_instance" name="in_instance" value="<?php echo FreshRSS_Context::$user_conf->in_player_instance; ?>" data-leave-validation="1">
+        </div>
+	</div>
+
+	<div class="form-group form-actions">
+		<div class="group-controls">
+			<button type="submit" class="btn btn-important"><?php echo _t('gen.action.submit'); ?></button>
+			<button type="reset" class="btn"><?php echo _t('gen.action.cancel'); ?></button>
+		</div>
+	</div>
+</form>
+
+<p>
+	<?php echo _t('ext.in_videos.updates'); ?>
+	<a href="https://github.com/Korbak/freshrss-invidous" target="_blank">GitHub</a>.
+</p>

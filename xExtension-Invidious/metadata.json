@@ -1,0 +1,8 @@
+{
+	"name": "Invidious Video Feed",
+	"author": "Korbak (forked from Kevin Papst)",
+	"description": "Embed YouTube feeds inside article content, but with Invidious.",
+	"version": 0.5,
+	"entrypoint": "Invidious",
+	"type": "system"
+}
