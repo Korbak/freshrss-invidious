@@ -13,7 +13,7 @@ The first step is to put the extension into your FreshRSS extension directory:
 cd /var/www/FreshRSS/extensions/
 wget https://github.com/korbak/freshrss-invidious/archive/master.zip
 unzip master.zip
-mv freshrss-youtube-master/xExtension-Invidious .
+mv freshrss-invidious-master/xExtension-Invidious .
 rm -rf freshrss-invidious-master/
 ```
 
