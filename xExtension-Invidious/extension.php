@@ -141,7 +141,11 @@ class InvidiousExtension extends Minz_Extension
     public function youtubeToInvidious($entry)
     {
         $yt_url = $entry->link();
-        $in_url = str_replace('//www.youtube.com/', '//' . $this->instance . '/', $yt_url);
+        if (stripos($yt_url, 'www.youtube.com') != false) {
+            $in_url = str_replace('//www.youtube.com/', '//' . $this->instance . '/', $yt_url);
+        } else if (stripos($yt_url, 'invidio.us') != false) {
+            $in_url = str_replace('//invidio.us/', '//' . $this->instance . '/', $yt_url);
+        }
         $in_url = str_replace('http://', 'https://', $in_url);
         return $in_url;
     }
@@ -156,11 +160,13 @@ class InvidiousExtension extends Minz_Extension
     {
         $this->loadConfigValues();
 
-        if (stripos($link, 'www.youtube.com/watch?v=') === false) {
+        if (stripos($link, 'www.youtube.com/watch?v=') != false) {
+            $url = str_replace('//www.youtube.com/watch?v=', '//' . $this->instance . '/embed/', $link);
+        } else if (stripos($link, 'invidio.us/watch?v=') != false) {
+            $url = str_replace('//invidio.us/watch?v=', '//' . $this->instance . '/embed/', $link);
+        } else {
             return null;
         }
-
-        $url = str_replace('//www.youtube.com/watch?v=', '//' . $this->instance . '/embed/', $link);
         $url = str_replace('http://', 'https://', $url);
         $html = $this->getIFrameHtml($url);
 
