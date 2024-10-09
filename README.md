@@ -1,3 +1,10 @@
+# Discontinued project
+
+This project is discontinued but still can be used at your own risks.
+An enhanced version has been forked by @tunbridgep here: https://github.com/tunbridgep/freshrss-invidious
+
+It includes a lot of edits and updates, with more functionnalities.
+
 # FreshRSS - Invidious videos extension
 
 This FreshRSS extension allows you to directly watch YouTube videos displayed by [your favorite Invidious instance](https://github.com/omarroth/invidious) from within subscribed channel feeds.
